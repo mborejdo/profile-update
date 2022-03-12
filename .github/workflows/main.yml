@@ -1,0 +1,16 @@
+on: [push]
+
+jobs:
+  tweetshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Denostuff
+        id: deno
+        uses: mborejdo/action-rusty@refs/heads/master
+        with:
+          mode: 'deno --version'
+          cli: ''
+          infile: ''
+          outfile: ''
