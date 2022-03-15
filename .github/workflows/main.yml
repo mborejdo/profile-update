@@ -13,7 +13,7 @@ jobs:
         uses: mborejdo/action-rusty@refs/heads/master
         with:
           mode: 'wcloud'
-          cli: '--height 480 --width 640 --min-font-size 10 --font fonts/FinkHeavy.ttf '
+          cli: '--height 486 --width 846 --min-font-size 10 --font fonts/FinkHeavy.ttf '
           infile: 'cloud.md'
           outfile: 'cloud.png'
       - name: Denostuff
