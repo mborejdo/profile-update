@@ -12,7 +12,7 @@ jobs:
         id: deno
         uses: mborejdo/action-rusty@refs/heads/master
         env:
-          API_TOKEN_GITHUB: ${{ action.API_TOKEN_GITHUB }}
+          API_TOKEN_GITHUB: ${{ secret.action.API_TOKEN_GITHUB }}
         with:
           mode: 'deno run -A --quiet ./index.ts'
           cli: ''
