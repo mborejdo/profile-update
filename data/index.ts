@@ -1,4 +1,4 @@
-import { exists } from "https://deno.land/std@0.129.0/fs/mod.ts";
+import { exists, move } from "https://deno.land/std@0.129.0/fs/mod.ts";
 import { join } from "https://deno.land/std@0.129.0/path/mod.ts";
 
 const { run, writeTextFile, env } = Deno;
@@ -78,6 +78,7 @@ function gitPush() {
 
 function patchReadme() {
   return new Promise(async (resolve: (value: boolean) => void) => {
+    await move(DESTFOLDER + "/../images/*", DESTFOLDER); // returns a promise
     await writeTextFile(`${DESTFOLDER}/README.md`, "Hello World! " + Math.random());
     resolve(true);
   });
