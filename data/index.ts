@@ -96,7 +96,7 @@ function gitPush() {
  */
 function patchReadme() {
   return new Promise(async (resolve: (value: boolean) => void) => {
-    await move(`${DESTFOLDER}/../images/cloud.png`, `${DESTFOLDER}/cloud.png`);
+    await move(`${DESTFOLDER}/../images/cloud.png`, `${DESTFOLDER}/cloud.png`, { overwrite: true });
     await writeTextFile(`${DESTFOLDER}/README.md`, '![me](cloud.png "Cloud")');
     resolve(true);
   });
