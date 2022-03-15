@@ -5,6 +5,10 @@ const { run, writeTextFile, env } = Deno;
 const API_TOKEN_GITHUB = env.get("API_TOKEN_GITHUB");
 const DESTFOLDER = "/github/workspace/data/mborejdo";
 
+/**
+ * 
+ * @returns 
+ */
 function gitConfigure(): Promise<boolean> {
   return new Promise((resolve: (value: boolean) => void) => {
     const config1 = run({
@@ -34,6 +38,12 @@ function gitConfigure(): Promise<boolean> {
   });
 }
 
+/**
+ * 
+ * @param source 
+ * @param dest 
+ * @returns 
+ */
 function gitClone(source: string, dest: string): Promise<boolean> {
   return new Promise(async (resolve: (value: boolean) => void) => {
     const isCloned = await exists(join(dest, ".git"));
@@ -55,6 +65,10 @@ function gitClone(source: string, dest: string): Promise<boolean> {
   });
 }
 
+/**
+ * 
+ * @returns 
+ */
 function gitPush() {
   return new Promise(async (resolve: (value: boolean) => void) => {
     const add = run({
@@ -68,7 +82,7 @@ function gitPush() {
     console.log("PUSHING", commitResult)
     if (commitResult.success) {
       const commit = run({
-        cmd: ["git", "-C", DESTFOLDER, "push"],
+        cmd: ["git", "-C", DESTFOLDER, "push", "--force"],
       });
       const commitResult = await commit.status();
     }
@@ -76,10 +90,14 @@ function gitPush() {
   });
 }
 
+/**
+ * 
+ * @returns 
+ */
 function patchReadme() {
   return new Promise(async (resolve: (value: boolean) => void) => {
-    await move(`${DESTFOLDER}/../images/cloud.png`, `${DESTFOLDER}/cloud.png`); // returns a promise
-    await writeTextFile(`${DESTFOLDER}/README.md`, "Hello World! " + Math.random());
+    await move(`${DESTFOLDER}/../images/cloud.png`, `${DESTFOLDER}/cloud.png`);
+    await writeTextFile(`${DESTFOLDER}/README.md`, '![me](cloud.png "Cloud")');
     resolve(true);
   });
 }
