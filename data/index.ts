@@ -1,8 +1,8 @@
 import { exists } from "https://deno.land/std@0.129.0/fs/mod.ts";
 import { join } from "https://deno.land/std@0.129.0/path/mod.ts";
 
-const { run, writeTextFile } = Deno;
-const API_TOKEN_GITHUB = Deno.env.get("API_TOKEN_GITHUB");
+const { run, writeTextFile, env } = Deno;
+const API_TOKEN_GITHUB = env.get("API_TOKEN_GITHUB");
 const DESTFOLDER = "/github/workspace/data/mborejdo";
 
 function gitConfigure(): Promise<boolean> {
