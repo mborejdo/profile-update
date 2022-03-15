@@ -8,6 +8,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Generating word-cloud
+        id: wcloud
+        uses: mborejdo/action-rusty@refs/heads/master
+        with:
+          mode: 'wcloud'
+          cli: '--height 640 --width 480 --min-font-size 10 --font fonts/FinkHeavy.ttf '
+          infile: 'cloud.md'
+          outfile: 'cloud.png'
       - name: Denostuff
         id: deno
         uses: mborejdo/action-rusty@refs/heads/master
