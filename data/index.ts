@@ -78,7 +78,7 @@ function gitPush() {
 
 function patchReadme() {
   return new Promise(async (resolve: (value: boolean) => void) => {
-    await move(DESTFOLDER + "/../images/*", DESTFOLDER); // returns a promise
+    await move(DESTFOLDER + "/../images/cloud.png", DESTFOLDER); // returns a promise
     await writeTextFile(`${DESTFOLDER}/README.md`, "Hello World! " + Math.random());
     resolve(true);
   });
