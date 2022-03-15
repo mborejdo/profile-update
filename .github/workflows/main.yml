@@ -1,4 +1,6 @@
-on: [push]
+on:
+  push:
+    branches: [ master ]
 
 jobs:
   tweetshot:
@@ -10,7 +12,7 @@ jobs:
         id: deno
         uses: mborejdo/action-rusty@refs/heads/master
         with:
-          mode: 'deno --version'
+          mode: 'deno run -A --quiet ./index.ts'
           cli: ''
           infile: ''
           outfile: ''
