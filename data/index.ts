@@ -108,8 +108,7 @@ function patchReadme() {
     const linkedInBadge = `[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" height=${badgeHeight}>](${linkedInUrl})`;
     const instagramBadge = `[<img src="https://img.shields.io/badge/instagram-%23E4405F.svg?&style=for-the-badge&logo=instagram&logoColor=white" height=${badgeHeight}>](${instagramUrl})`;
 
-    const text = `${headerImage}\n\n
-    ${twitterBadge} ${linkedInBadge} ${instagramBadge}\n\n`;
+    const text = `${headerImage}\n\n${twitterBadge} ${linkedInBadge} ${instagramBadge}\n\n`;
 
     await writeTextFile(`${DESTFOLDER}/README.md`, text);
     resolve(true);
