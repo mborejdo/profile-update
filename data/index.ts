@@ -7,7 +7,7 @@ const DESTFOLDER = "/github/workspace/data/mborejdo";
 const twitterUrl = "https://www.twitter.com/mediacoder";
 const linkedInUrl = "https://www.linkedin.com/in/michael-borejdo-a7367928/";
 const instagramUrl = "https://www.instagram.com/mediacoder/";
-const badgeHeight = "25";
+const badgeHeight = "20";
 
 
 /**
