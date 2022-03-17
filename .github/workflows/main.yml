@@ -16,7 +16,7 @@ jobs:
         with:
           mode: 'wcloud'
           cli: '--height 486 --width 846 --font fonts/FinkHeavy.ttf '
-          infile: 'cloud.md'
+          infile: 'cloud2.md'
           outfile: 'cloud.png'
       - name: Denostuff
         id: deno
