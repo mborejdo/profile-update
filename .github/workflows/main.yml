@@ -3,7 +3,7 @@ on:
     branches: [ master ]
 
 jobs:
-  til:
+  profile-update:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
