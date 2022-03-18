@@ -1,4 +1,5 @@
 import { gitConfigure, gitClone, gitPush } from "./git.ts";
+// https://cdn.jsdelivr.net/gh/mborejdo/profile-update/data/git.ts
 import { exists, move } from "https://deno.land/std@0.129.0/fs/mod.ts";
 
 const { run, writeTextFile, env } = Deno;
