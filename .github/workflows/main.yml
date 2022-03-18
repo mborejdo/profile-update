@@ -22,9 +22,8 @@ jobs:
         id: deno
         uses: mborejdo/action-rusty@refs/heads/master
         env:
+          REPO: mborejdo
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           mode: 'deno run -A --quiet ./index.ts'
           cli: ''
-          infile: ''
-          outfile: ''
