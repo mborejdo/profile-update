@@ -1,8 +1,8 @@
 import { gitConfigure, gitClone, gitPush } from "./git.ts";
 // https://cdn.jsdelivr.net/gh/mborejdo/profile-update/data/git.ts
-import { exists, move } from "https://deno.land/std@0.129.0/fs/mod.ts";
+import { move } from "https://deno.land/std@0.129.0/fs/mod.ts";
 
-const { run, writeTextFile, env } = Deno;
+const { writeTextFile, env } = Deno;
 const API_TOKEN_GITHUB = env.get("API_TOKEN_GITHUB") || "";
 const REPO = env.get("REPO") || "mborejdo";
 
@@ -13,7 +13,6 @@ const twitterUrl = "https://www.twitter.com/mediacoder";
 const linkedInUrl = "https://www.linkedin.com/in/michael-borejdo-a7367928/";
 const instagramUrl = "https://www.instagram.com/mediacoder/";
 const badgeHeight = "20";
-
 
 /**
  * 
@@ -37,7 +36,7 @@ function patchReadme() {
 
 
 await gitConfigure(API_TOKEN_GITHUB);
-await gitClone(`https://${API_TOKEN_GITHUB}@github.com/mborejdo/mborejdo.git`, DESTFOLDER);
+await gitClone(`https://${API_TOKEN_GITHUB}@github.com/mborejdo/${REPO}.git`, DESTFOLDER);
 
 await patchReadme();
 
