@@ -30,12 +30,7 @@ async function loadBlogPosts() {
     links += `<li><a href=${item?.links[0].href}>${item?.title?.value}</a></li>`;
   });
 
-  return `
-  <ul>
-    ${links}
-  </ul>\n
-  [:arrow_right: More blog posts](${websiteUrl}/blog)
-  `;
+  return `<ul>${links}</ul>\n[:arrow_right: More posts](${websiteUrl})\n\n`;
 }
 
 /**
