@@ -86,11 +86,7 @@ wizard
 PWA
 Web
 ecommerce
-Magento
-Shopware
-Pimcore
 Wordpress
-Laravel
 mysql
 sqlite
 postgresql
@@ -110,6 +106,7 @@ ghostinspector
 Cypress
 nodejs
 deno
+bun.js
 solr
 varnish
 traefik
@@ -127,6 +124,7 @@ coverage
 security
 bundling
 compiling
+treeshaking
 testing
 HTTP
 encryption
