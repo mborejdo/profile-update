@@ -18,9 +18,7 @@ const instagramUrl = "https://www.instagram.com/mediacoder";
 const badgeHeight = "20";
 
 async function loadBlogPosts() {
-  const feedResponse = await fetch(
-    `${websiteUrl}/atom.xml`,
-  );
+  const feedResponse = await fetch(`${websiteUrl}/atom.xml`);
   const xml = await feedResponse.text();
   const feed = await parseFeed(xml);
 
