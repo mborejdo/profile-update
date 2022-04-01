@@ -44,12 +44,13 @@ async function patchReadme() {
   await move(`${DESTFOLDER}/../images/cloud.png`, `${DESTFOLDER}/cloud.png`, { overwrite: true });
   const feed = await loadBlogPosts();
 
+  const title = "# Hi!  👋";
   const headerImage = `![me](cloud.png "Cloud")`;
   const twitterBadge = `[<img src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" height=${badgeHeight}>](${twitterUrl})`;
   const linkedInBadge = `[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" height=${badgeHeight}>](${linkedInUrl})`;
   const instagramBadge = `[<img src="https://img.shields.io/badge/instagram-%23E4405F.svg?&style=for-the-badge&logo=instagram&logoColor=white" height=${badgeHeight}>](${instagramUrl})`;
 
-  const text = `${headerImage}\n\n${feed}\n\n${twitterBadge} ${linkedInBadge} ${instagramBadge}\n\n`;
+  const text = `${title}\n\n${headerImage}\n\n${feed}\n\n${twitterBadge} ${linkedInBadge} ${instagramBadge}\n\n`;
 
   await writeTextFile(`${DESTFOLDER}/README.md`, text);
   return true;
